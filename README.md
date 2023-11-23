@@ -6,3 +6,5 @@ Koodi itsekirjoitettua, välillä tsekannut jQuery syntaxia chatGPTstä. Jos pit
 
 Promiseista: https://www.youtube.com/watch?v=DHvZLI7Db8E
 Fetch API: https://www.youtube.com/watch?v=cuEtnrL9-H0
+
+Bootstrappia tässä ei ole yhtään, koska halusin keskittyä nyt vain JavaScriptiin. Viimevuoden verkkosivujen kehittäminen kurssilla, kuitenkin käytin Bootsrappia esim. https://trrahi.github.io/photography/index.html etusivun "diashowssa".
