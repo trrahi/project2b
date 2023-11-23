@@ -56,6 +56,7 @@ const getQuoteButton = $(".get-quote")
 const kanyesQuotes = $(".kanyes-quotes")
 const rateQuote = $(".rate-quote")
 const rating = $(".rating")
+const clearHistory = $(".clear-history")
 // REFERENCES TO HTML ELEMENTS ENDS
 
 
@@ -63,6 +64,7 @@ const rating = $(".rating")
 document.addEventListener("DOMContentLoaded", getQuoteFromKanye)
 getQuoteButton.on("click", getQuoteFromKanye)
 rateQuote.on("click", rateQuoteFunction)
+clearHistory.on("click", clearRatingHistory)
 // ADDING EVENT LISTENERS ENDS
 
 
@@ -100,43 +102,45 @@ function getQuoteFromKanye() {
 
 // Rate quote and store quote and rating to localStorage
 function rateQuoteFunction(event) {
-    if (arrayOfKanyeQuoteObjects.length < 1){
-        let kanyeQuoteToArray = new kanyeQuote(kanyesQuotes.text(), event.target.textContent)
-        arrayOfKanyeQuoteObjects.push(kanyeQuoteToArray)
-        
-        if (!contentContainer2.lastElementChild.classList.contains("kanyes-thank-you")) {
-            const kanyesThankYou = $('<p>').addClass('kanyes-thank-you').text("Kanye thanks you for your feedback! 🙏")
-            contentContainer.append(kanyesThankYou)
-            setTimeout(() => {
-                $(".kanyes-thank-you").remove()
-            }, 2000)
-        }
-        saveQuoteAndRatingToLocalStorage()
-        displayAverageRatingToUser()
-    }
-    else if (arrayOfKanyeQuoteObjects[arrayOfKanyeQuoteObjects.length - 1].quoteText !== kanyesQuotes.text()) {
-        let kanyeQuoteToArray = new kanyeQuote(kanyesQuotes.text(), event.target.textContent)
-        arrayOfKanyeQuoteObjects.push(kanyeQuoteToArray)
-        
-        if (!contentContainer2.lastElementChild.classList.contains("kanyes-thank-you")) {
-            const kanyesThankYou = $('<p>').addClass('kanyes-thank-you').text("Kanye thanks you for your feedback! 🙏")
-            contentContainer.append(kanyesThankYou)
-            setTimeout(() => {
-                $(".kanyes-thank-you").remove()
-            }, 2000)
-        }
-        saveQuoteAndRatingToLocalStorage()
-        displayAverageRatingToUser()
-    } else {
-        if (contentContainer2.lastElementChild.textContent.includes("Kanye thanks you")) {
-            $(".kanyes-thank-you").remove()
-        } if (!contentContainer2.lastElementChild.classList.contains("kanyes-thank-you")) {
-                const kanyesThankYou = $('<p>').addClass('kanyes-thank-you').text(`You can't rate a quote twice. Or as Kanye would put it: "You can’t look at a glass half full or empty if it’s overflowing."`)
+    if (event.target.tagName == "LI") {
+        if (arrayOfKanyeQuoteObjects.length < 1){
+            let kanyeQuoteToArray = new kanyeQuote(kanyesQuotes.text(), event.target.textContent)
+            arrayOfKanyeQuoteObjects.push(kanyeQuoteToArray)
+            
+            if (!contentContainer2.lastElementChild.classList.contains("kanyes-thank-you")) {
+                const kanyesThankYou = $('<p>').addClass('kanyes-thank-you').text("Kanye thanks you for your feedback! 🙏")
                 contentContainer.append(kanyesThankYou)
                 setTimeout(() => {
                     $(".kanyes-thank-you").remove()
-                }, 5000)
+                }, 2000)
             }
+            saveQuoteAndRatingToLocalStorage()
+            displayAverageRatingToUser()
+        }
+        else if (arrayOfKanyeQuoteObjects[arrayOfKanyeQuoteObjects.length - 1].quoteText !== kanyesQuotes.text()) {
+            let kanyeQuoteToArray = new kanyeQuote(kanyesQuotes.text(), event.target.textContent)
+            arrayOfKanyeQuoteObjects.push(kanyeQuoteToArray)
+            
+            if (!contentContainer2.lastElementChild.classList.contains("kanyes-thank-you")) {
+                const kanyesThankYou = $('<p>').addClass('kanyes-thank-you').text("Kanye thanks you for your feedback! 🙏")
+                contentContainer.append(kanyesThankYou)
+                setTimeout(() => {
+                    $(".kanyes-thank-you").remove()
+                }, 2000)
+            }
+            saveQuoteAndRatingToLocalStorage()
+            displayAverageRatingToUser()
+        } else {
+            if (contentContainer2.lastElementChild.textContent.includes("Kanye thanks you")) {
+                $(".kanyes-thank-you").remove()
+            } if (!contentContainer2.lastElementChild.classList.contains("kanyes-thank-you")) {
+                    const kanyesThankYou = $('<p>').addClass('kanyes-thank-you').text(`You can't rate a quote twice. Or as Kanye would put it: "You can’t look at a glass half full or empty if it’s overflowing."`)
+                    contentContainer.append(kanyesThankYou)
+                    setTimeout(() => {
+                        $(".kanyes-thank-you").remove()
+                    }, 5000)
+                }
+        }
     }
 }
 
@@ -198,6 +202,13 @@ function displayAverageRatingToUser() {
 
 }
 displayAverageRatingToUser()
+
+
+
+function clearRatingHistory() {
+    localStorage.removeItem("quotesAndRatings")
+    rating.remove()
+}
 
 // FUNCTIONS ENDS
 

@@ -217,9 +217,9 @@ button {
     padding-block: 1rem;
     margin-block: 2rem;
 }
-button:hover {
+.get-quote:hover {
     cursor: pointer;
-    background-color: red;
+    background-color: green;
 }
 /* PAGE TITLE CONTAINER ENDS */
 
@@ -313,7 +313,20 @@ button:hover {
 }
 
 
-
+.clear-history {
+    margin-inline: auto;
+    width: 10%;
+    font-size: 1rem;;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1rem;;
+    border: 0px;
+    outline: 0px;
+}
+.clear-history:hover {
+    background-color: red;
+}
 
 
 
