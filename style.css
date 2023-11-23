@@ -1,0 +1,433 @@
+/* CSS reset STARTS */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+/* CSS reset ENDS*/
+
+
+
+
+/* ROOT STARTS */
+:root {
+    /* General background */
+    --background-color1: #6897752b;
+    --background-color2: #e4f4e5f3;
+
+
+    --main-color1: #689775;
+    --main-color2: #90bf9d;
+    --main-color3: #2b6231;
+
+
+
+    --secondary-color1: #eee16e;
+    --secondary-color2: #c5b94d;
+
+    /* For all font */
+    --font-color1: #283434;
+}
+
+/* ROOT ENDS*/
+
+
+
+/* Body CSS STARTS*/
+body {
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: rgba(0, 0, 0, 0.971);
+    color: gold;
+    font-size: 18px;
+}
+/* Body CSS ENDS*/
+
+/* PAGE TITLE CONTAINER STARTS*/
+.page-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: auto;
+}
+
+.page-title-container > * {
+    text-align: center;
+    border: 0px;
+    border-radius: 1rem;
+    outline: none;
+}
+
+.site-name {
+    font-size: 5rem;
+    font-weight: 800;
+    text-decoration: underline;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+.site-name:hover {
+    color:#fbf1cf;
+}
+.kaas {
+    text-decoration: underline;
+    font-size: 2rem;
+}
+
+.desc {
+    font-size: 1.5rem;
+}
+button {
+    font-family: inherit;
+    font-size: 1.5rem;
+    padding-inline: 1rem;
+    padding-block: 1rem;
+    margin-block: 2rem;
+}
+button:hover {
+    cursor: pointer;
+    background-color: red;
+}
+/* PAGE TITLE CONTAINER ENDS */
+
+
+
+
+/* MOVIES CONTAINER STARTS */
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 50%;
+    margin-inline: auto;
+}
+.content-container > * {
+    margin-block: 1rem;
+}
+
+.kanyes-quotes{
+    text-align: center;
+    margin-top: 1rem;
+    padding: 2rem;
+
+    font-size: 2rem;
+    background-color: rgba(157, 123, 0, 0.635);
+    border-radius: 2rem;;
+}
+.rate-cta {
+    text-decoration: underline;
+}
+.rate-quote {
+    display: flex;
+
+    font-size: 4rem;
+}
+.rate-quote > * {
+    margin-inline: 30px;
+    padding: 10px;
+    border-radius: 1rem;
+    border: 1px solid;
+
+    font-size: 2rem;
+}
+.rate-quote > *:hover {
+    cursor: pointer;
+}
+.kanyes-thank-you {
+    text-align: center;
+}
+
+/* MOVIES CONTAINER ENDS*/
+
+.quotes-and-ratings {
+}
+.headers-container {
+    display: flex;
+    margin-inline: auto;
+    width: 50%;
+    justify-content: space-around;
+    background-color: red;
+    font-size: 2rem;;
+    border-radius: 1px;
+    padding: 1rem;
+    text-decoration: underline;
+    border: 5px solid;
+
+
+
+}
+.headers-container:nth-child(1) {
+    border: 5px solid;
+    color: black;
+
+}
+.quotes-container {
+    display: flex;
+    margin-inline: auto;
+    width: 50%;
+    justify-content: space-around;
+    background-color: red;
+    font-size: 2rem;;
+    border-radius: 1px;
+    padding: 1rem;
+
+}
+.rating {
+    font-size: 2rem;
+    margin-top: 1rem;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/* General SHOW/HIDE item classes STARTS */
+.show-element {
+    display: flex;
+}
+.hide-element {
+    display: none;
+}
+/* General SHOW/HIDE item classes ENDS*/
+
+
+
+
+/* ALL HOVER effects & transitions STARTS*/
+.hover-effect:hover {
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
+    opacity: 1;
+}
+/* ALL HOVER effects & transitions ENDS*/
+
+
+
+/* ANIMATIONS STARTS */
+/* Notice text animation */
+.choose-theatre-notice {
+    margin-top: 10%;
+    font-size: 4rem;
+    text-align: center;
+}
+.bouncing-effect {
+    animation: bouncing-effect 2s ease-in-out infinite;
+}
+.bouncing-effect-small {
+    animation: bouncing-effect-small 2s ease-in-out infinite;
+}
+@keyframes bouncing-effect {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-20px);
+      }
+      60% {
+        transform: translateY(-10px);
+      }
+}
+@keyframes bouncing-effect-small {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-3px);
+      }
+      60% {
+        transform: translateY(-1px);
+      }
+}
+
+/* ANIMATIONS ENDS */
+
+
+
+
+
+/* MEDIA QUERIES START */
+
+@media (max-width: 1000px) {
+    .page-title-container > * {
+        font-size: 1rem;
+        line-height:1rem;
+    }
+    .site-name {
+        margin-top: 2rem;
+        font-size: 3rem;
+    }
+    #theatre-selection {
+        font-size: 0.7rem;;
+        width: 100%;
+        font-size: .7rem;
+        padding: 1rem;
+    }
+    #search-field {
+        font-size: .8rem;;
+        width: 80%;
+        padding: 1rem;
+    }
+    .movies-container {
+        max-width: 80%;
+        margin-inline: auto;
+        font-size: 1rem;
+    }
+    .movie-item > * {
+        font-size: .8rem;;
+        padding: 3px;
+    }
+    
+    .movie-title {
+        font-size: 1.2rem;
+    }
+    .movie-image {
+        width: 60%;
+        margin-top: 3rem;
+    }
+    .plot-info {
+        max-width: 50%;
+        text-align: center;
+    }
+    .choose-theatre-notice {
+        font-size: 1.5rem;
+    }
+}
+
+/* MEDIA QUERIES ENDS */
+
