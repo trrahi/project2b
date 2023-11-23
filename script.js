@@ -1,12 +1,14 @@
+// THIS IS A JOKE
+
 // RANDOM TESTAILUA, EI LIITY MUUHUN APPIIN STARTS
 // Random promise testailua
 let kanyeIsCrazy = true
 const kanyePromise = new Promise((resolve, reject) => {
     if (kanyeIsCrazy) {
-        const result = "Kanye is indeed crazy mf"
+        const result = "Yes."
         resolve(result)
     } else {
-        const reason = "He took his medicine"
+        const reason = "No."
         reject(reason)
     }
 })
